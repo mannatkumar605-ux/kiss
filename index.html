@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Kiss Day My Bettu 💋</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #ff6a88, #ff99ac, #ff758c, #ff7eb3);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .card {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 38px;
+        }
+
+        #typing {
+            font-size: 20px;
+            margin-top: 20px;
+            min-height: 60px;
+        }
+
+        button {
+            margin: 15px;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: white;
+            color: #ff4b6e;
+        }
+
+        .yes:hover {
+            background: #ff4b6e;
+            color: white;
+        }
+
+        .no {
+            background: #ff4b6e;
+            color: white;
+            position: relative;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-10vh); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="card">
+        <h1>Happy Kiss Day 💋 My Bettu</h1>
+        <div id="typing"></div>
+
+        <button class="yes" onclick="love()">Yes Forever 💍</button>
+        <button class="no" onmouseover="moveButton(this)">No 😜</button>
+    </div>
+
+<script>
+
+    // Typing Effect
+    const text = "Bettu ❤️ Every kiss from you feels like magic. You are my heart, my peace, my forever. I promise to love you endlessly, my Bettu 💕";
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+
+    typeWriter();
+
+    // Love Button
+    function love() {
+        alert("Muuuaaaahhh 💋 I Love You Bettu Forever ❤️");
+    }
+
+    // Move No Button
+    function moveButton(button) {
+        button.style.position = "absolute";
+        button.style.top = Math.random() * 300 + "px";
+        button.style.left = Math.random() * 300 + "px";
+    }
+
+    // Floating Hearts
+    setInterval(function() {
+        var heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        heart.style.color = "white";
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 5000);
+    }, 300);
+
+</script>
+
+</body>
+</html>
