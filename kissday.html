@@ -88,9 +88,10 @@
 <body>
 
     <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="bgMusic" loop>
+    <source src="mysong.mp3" type="audio/mpeg">
+</audio>
+
 
     <div class="card">
         <h1>Happy Kiss Day 💋 My Bettu</h1>
@@ -118,8 +119,11 @@
 
     // Love Button
     function love() {
-        alert("Muuuaaaahhh 💋 I Love You Bettu Forever ❤️");
-    }
+    var music = document.getElementById("bgMusic");
+    music.play();
+    alert("Muuuaaaahhh 💋 I Love You Bettu Forever ❤️");
+}
+
 
     // Move No Button
     function moveButton(button) {
